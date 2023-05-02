@@ -9,7 +9,7 @@ import toast, { Toaster } from 'react-hot-toast';
 const ChefsCard = ({ chef }) => {
 
     const [like, setLike] = useState(true);
-    const { chefs_info, details, title } = chef;
+    const { chefs_info, details, title, _id } = chef;
     // console.log(title);
 
     const handleLikeButton = () => {
@@ -52,7 +52,7 @@ const ChefsCard = ({ chef }) => {
                             </div>
                         </Card.Text>
 
-                        <Link to='/chef-recipes/:id'> <button className='btn-annmi w-100 position-absolute bottom-0 start-0 flex-grow-1 my-auto'>View Recipes <FaArrowRight className='ms-3'></FaArrowRight> </button></Link>
+                        <Link to={`/recipes/${_id}`}> <button className='btn-annmi w-100 position-absolute bottom-0 start-0 flex-grow-1 my-auto'>View Recipes <FaArrowRight className='ms-3'></FaArrowRight> </button></Link>
 
 
                     </Card.Body>
