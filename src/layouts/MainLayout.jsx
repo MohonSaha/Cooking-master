@@ -6,6 +6,7 @@ import Navbar from '../pages/Shared/Header/Navbar';
 import Banner from '../pages/Home/Banner/Banner';
 import { Col, Container, Row } from 'react-bootstrap';
 import LeftNav from '../pages/Shared/LeftNav/LeftNav';
+import CarouselItam from '../pages/Home/Carousel/CarouselItam';
 
 const MainLayout = () => {
     return (
@@ -24,6 +25,7 @@ const MainLayout = () => {
                     </Col>
                 </Row>
             </Container>
+            <CarouselItam></CarouselItam>
             <Footer></Footer>
 
         </div>
