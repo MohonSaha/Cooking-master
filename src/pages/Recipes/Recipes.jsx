@@ -3,12 +3,14 @@ import { Button, Card, Col, Container, Row } from 'react-bootstrap';
 import { Link, useLoaderData, useParams } from 'react-router-dom';
 import LeftNav from '../Shared/LeftNav/LeftNav';
 import { FaArrowLeft, FaHamburger, FaRegClock, FaRegThumbsUp } from 'react-icons/fa';
+import SingleRecipes from '../SingleRecipes/SingleRecipes';
 
 const Recipes = () => {
 
 
 
     const [viewRecipe, setViewRecipe] = useState({});
+    const [loading, setLoading] = useState(true);
 
     const dynamicId = useParams();
     const recipes = useLoaderData()
@@ -17,6 +19,7 @@ const Recipes = () => {
         if (recipes) {
             const viewData = recipes.find(recipe => recipe._id === dynamicId.id);
             setViewRecipe(viewData);
+            setLoading(false)
         }
 
     }, [])
@@ -26,12 +29,10 @@ const Recipes = () => {
     const { _id, chefs_info, recipe_info, total_view, likes, details } = viewRecipe;
 
 
+    console.log(recipe_info);
+
     return (
         <div>
-
-
-
-
             <Container className='mt-4'>
                 <Row>
                     <Col lg={9}>
@@ -57,12 +58,12 @@ const Recipes = () => {
                                     </div>
                                 </Card.Text>
 
-                                <Link to="/"> <button style={{borderRadius: '12px', paddingLeft: '10px', paddingRight: '10px'}} className='primary-btn' > <FaArrowLeft/> Back to Home</button></Link>
+                                <Link to="/"> <button style={{ borderRadius: '12px', paddingLeft: '10px', paddingRight: '10px' }} className='primary-btn' > <FaArrowLeft /> Back to Home</button></Link>
 
                             </Card.Body>
                             <Card.Footer className="text-muted">
 
-                            <Card.Text className='d-flex align-items-center'>
+                                <Card.Text className='d-flex align-items-center'>
                                     <FaRegThumbsUp className='me-1 fs-5 fw-bold text-primary'></FaRegThumbsUp>
                                     <div className='d-flex align-items-center'>
                                         <span className='me-1 fw-bold'></span>  {likes}
@@ -72,6 +73,12 @@ const Recipes = () => {
 
                             </Card.Footer>
                         </Card>
+
+
+
+
+
+
                     </Col>
 
 
@@ -80,6 +87,20 @@ const Recipes = () => {
                     </Col>
                 </Row>
             </Container>
+
+            <Container>
+                <div className='mt-5'>
+                    {
+                        <Row xs={1} md={3} className="g-4">
+                            {Array.from({ length: 1 }).map((_, idx) => (
+                                loading || recipe_info.map(recipe => <SingleRecipes recipe={recipe}></SingleRecipes>)
+
+                            ))}
+                        </Row>
+                    }
+                </div>
+            </Container>
+
         </div>
     );
 };

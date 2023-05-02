@@ -10,7 +10,6 @@ const ChefsCard = ({ chef }) => {
 
     const [like, setLike] = useState(true);
     const { chefs_info, details, title, _id } = chef;
-    // console.log(title);
 
     const handleLikeButton = () => {
         toast.success('Successfully created!');
@@ -24,12 +23,7 @@ const ChefsCard = ({ chef }) => {
             <Col>
                 <Card className='position-relative' style={{ height: '600px' }}>
                     <Card.Img className='rounded' variant="top" src={chefs_info?.img} />
-                    <div className='m-3'>
-                        <button className='like-btn' disabled={!like}>
-
-                            <FaHeart onClick={handleLikeButton} style={{ top: '10px', right: '10px' }} className={`position-absolute fs-3  heart-btn ${like ? 'text-light' : 'cooking-primary'}`}></FaHeart>
-                        </button>
-                    </div>
+                    
 
                     <Card.Body>
                         <Card.Title>{chefs_info?.name}</Card.Title>

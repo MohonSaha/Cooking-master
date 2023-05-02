@@ -11,8 +11,8 @@ const Navbar = () => {
             <span className="nav-logo">Cooking Master</span>
             <div className={`nav-items ${isOpen && "open"}`}>
                 <Link to="/">Home</Link>
-                <Link to="/recipes">Recipes</Link>
                 <Link to="/cart">Contract</Link>
+                <Link to="/about">About Us</Link>
                 <Link to="/blog">Blog</Link>
                 <span className="apply-btn nav-items">
                     <Link to=""><FaSearch/></Link>
