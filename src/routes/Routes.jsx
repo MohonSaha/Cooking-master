@@ -8,6 +8,7 @@ import Register from "../pages/Login/Register/Register";
 import Footer from "../pages/Shared/Footer/Footer";
 import LoginLayout from "../layouts/LoginLayout";
 import Banner from "../pages/Home/Banner/Banner";
+import Chefs from "../pages/Home/Chefs/Chefs";
 
 
 
@@ -33,7 +34,11 @@ import Banner from "../pages/Home/Banner/Banner";
         path: '/',
         element: <MainLayout></MainLayout>,
         children: [
-            
+            {
+                path: '/',
+                element: <Chefs></Chefs>,
+                loader: () => fetch('http://localhost:5000/chefs')
+            }
         ]
     }
   ]);
