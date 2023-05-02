@@ -2,11 +2,12 @@ import React, { useContext, useState } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProviders';
+import { FaGithub, FaGoogle } from 'react-icons/fa';
 
 const Login = () => {
 
     const [error, setError] = useState('');
-    const {signIn} = useContext(AuthContext);
+    const {signIn, signInWithGoogle} = useContext(AuthContext);
 
 
     const handleLogin = event =>{
@@ -22,6 +23,22 @@ const Login = () => {
         // }
         
         signIn(email, password)
+        .then(result=>{
+            const loggedUser = result.user;
+            console.log(loggedUser);
+            form.reset()
+        })
+        .catch(error => {
+            setError(error.message)
+        })
+    }
+
+
+    // Handle Google signIn: 
+    const handleGoogleSignIn = () =>{
+        setError('');
+        
+        signInWithGoogle()
         .then(result=>{
             const loggedUser = result.user;
             console.log(loggedUser);
@@ -47,9 +64,6 @@ const Login = () => {
                         <Form.Label>Password</Form.Label>
                         <Form.Control type="password" name='password' required placeholder="Password" />
                     </Form.Group>
-                    <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                        <Form.Check type="checkbox" label="Remember me" />
-                    </Form.Group>
 
                     <Form.Text className="text-danger">
                         {error}
@@ -63,6 +77,10 @@ const Login = () => {
                     <Form.Text className="text-secondary">
                         Don't Have an account? <Link className='text-decoration-none text-danger' to='/register'>Register</Link>
                     </Form.Text>
+
+                    <Button onClick={handleGoogleSignIn} className='mt-4 w-100' variant="outline-primary"><FaGoogle/> Login with Google</Button>
+
+                    <Button className='mt-2 w-100' variant="outline-secondary"><FaGithub/> Login with Github</Button>
 
                     <Form.Text className="text-success">
 

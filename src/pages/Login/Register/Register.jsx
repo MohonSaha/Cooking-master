@@ -33,11 +33,12 @@ const Register = () => {
             return;
         }
 
+
         createUser(email, password)
         .then(result =>{
             const createdUser = result.user;
             console.log(createdUser);
-            form.reset()
+            form.reset();
         })
         .catch(error =>{
             console.log(error);
@@ -70,13 +71,6 @@ const Register = () => {
                         <Form.Control type="password" name='password'  placeholder="Password" />
                     </Form.Group>
 
-                    <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                        <Form.Check 
-                        type="checkbox"
-                         name="accept" 
-                         label={<Link to="/terms" className='text-decoration-none'>Accept terms and conditions</Link>} />
-                    </Form.Group>
-
                     <Form.Text className="text-danger mt-0 mb-3 fs-6">
                         {error}
                     </Form.Text>
@@ -86,7 +80,7 @@ const Register = () => {
                     </Button><br />
 
                     <Form.Text className="text-secondary">
-                        Already have account <Link className='text-decoration-none text-danger' to='/login'>Login</Link>
+                        Already have account? <Link className='text-decoration-none text-danger' to='/login'>Login</Link>
                     </Form.Text>
 
                     <Form.Text className="text-success">
