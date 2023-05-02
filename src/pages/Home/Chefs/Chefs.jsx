@@ -4,10 +4,10 @@ import { FaEye, FaHeart } from 'react-icons/fa';
 import { useLoaderData } from 'react-router-dom';
 import ChefsCard from '../ChefsCard/ChefsCard';
 
-const Chefs = () => {
+const Chefs = ({children}) => {
 
-    const chefs = useLoaderData()
-    console.log(chefs);
+    const chefs = children;
+
 
     return (
         <div>

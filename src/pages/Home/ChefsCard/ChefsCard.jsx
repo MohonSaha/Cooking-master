@@ -1,22 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Card, Col } from 'react-bootstrap';
 import { FaArrowRight, FaHamburger, FaHeart, FaRegClock, FaRegHeart } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+import toast, { Toaster } from 'react-hot-toast';
+
+
 
 const ChefsCard = ({ chef }) => {
 
-
+    const [like, setLike] = useState(true);
     const { chefs_info, details, title } = chef;
     // console.log(title);
+
+    const handleLikeButton = () => {
+        toast.success('Successfully created!');
+        setLike(false)
+    }
 
 
     return (
         <div className='mt-5'>
+            <Toaster />
             <Col>
-                <Card className='position-relative' style={{height: '580px'}}>
+                <Card className='position-relative' style={{ height: '600px' }}>
                     <Card.Img className='rounded' variant="top" src={chefs_info?.img} />
                     <div className='m-3'>
-                        <FaRegHeart style={{top: '10px', right: '10px'}} className='position-absolute text-light fs-3 text-danger cursor'></FaRegHeart>
+                        <button className='like-btn' disabled={!like}>
+
+                            <FaHeart onClick={handleLikeButton} style={{ top: '10px', right: '10px' }} className={`position-absolute fs-3  heart-btn ${like ? 'text-light' : 'cooking-primary'}`}></FaHeart>
+                        </button>
                     </div>
+
                     <Card.Body>
                         <Card.Title>{chefs_info?.name}</Card.Title>
                         <Card.Text>
@@ -38,7 +52,9 @@ const ChefsCard = ({ chef }) => {
                             </div>
                         </Card.Text>
 
-                        <button className='btn-annmi w-100 position-absolute bottom-0 start-0 flex-grow-1 my-auto'>View Recipes <FaArrowRight className='ms-3'></FaArrowRight> </button>
+                        <Link to='/chef-recipes/:id'> <button className='btn-annmi w-100 position-absolute bottom-0 start-0 flex-grow-1 my-auto'>View Recipes <FaArrowRight className='ms-3'></FaArrowRight> </button></Link>
+
+
                     </Card.Body>
                 </Card>
             </Col>

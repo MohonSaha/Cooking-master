@@ -58,10 +58,21 @@ border: #ec3e1f;
   padding: 6px 15px;
   width: 700px;
   background-color: #d63012;
-  
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: rgb(255, 255, 255);
   opacity: 1; /* Firefox */
 }
+
+.like-btn{
+  color: rgba(255, 255, 255, 0);
+  border: none;
+}
+
+.heart-btn{
+  color: #d4482f;
+  transition-duration: 400ms;
+  
+}
+
