@@ -15,9 +15,8 @@ const Navbar = () => {
                 <Link to="/cart">Contract</Link>
                 <Link to="/blog">Blog</Link>
                 <span className="apply-btn nav-items">
-                    <Link to="/statistics"><FaSearch/></Link>
-                    <Link to="/cart">Sign In</Link>
-                    <Link to="/blog"><button className="primary-btn">Sign Up</button></Link>
+                    <Link to=""><FaSearch/></Link>
+                    <Link to="/login"><button className="primary-btn">Log In</button></Link>
                 </span>
             </div>
             <div
