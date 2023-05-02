@@ -7,6 +7,7 @@ import Banner from '../pages/Home/Banner/Banner';
 import { Col, Container, Row } from 'react-bootstrap';
 import LeftNav from '../pages/Shared/LeftNav/LeftNav';
 import CarouselItam from '../pages/Home/Carousel/CarouselItam';
+import Subscribe from '../pages/Home/Subscribe/Subscribe';
 
 const MainLayout = () => {
     return (
@@ -26,6 +27,7 @@ const MainLayout = () => {
                 </Row>
             </Container>
             <CarouselItam></CarouselItam>
+            <Subscribe></Subscribe>
             <Footer></Footer>
 
         </div>

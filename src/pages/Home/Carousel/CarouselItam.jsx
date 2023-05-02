@@ -6,14 +6,15 @@ import { Carousel, Container } from 'react-bootstrap';
 
 const CarouselItam = () => {
     return (
-        <Container className='mt-5'>
+        <Container className='my-5'>
+            <h2 className='mb-4'>Top of the Year: <span className='cooking-primary'>2023</span></h2>
             <Carousel>
                 <Carousel.Item>
                     <img
                         className="d-block w-100  rounded-2"
                         src={picture2}
                         alt="First slide"
-                        style={{height: '300px'}}
+                        style={{height: '400px'}}
 
                     />
                     <Carousel.Caption>
@@ -26,7 +27,7 @@ const CarouselItam = () => {
                         className="d-block w-100  rounded-2"
                         src={picture3}
                         alt="Second slide"
-                        style={{height: '300px'}}
+                        style={{height: '400px'}}
                     />
 
                     <Carousel.Caption>
@@ -39,7 +40,7 @@ const CarouselItam = () => {
                         className="d-block w-100  rounded-2"
                         src={picture1}
                         alt="Third slide"
-                        style={{height: '300px'}}
+                        style={{height: '400px'}}
                     />
 
                     <Carousel.Caption>
