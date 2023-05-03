@@ -3,6 +3,11 @@ import { Card, Col } from 'react-bootstrap';
 import { FaArrowRight, FaHamburger, FaHeart, FaRegClock, FaRegHeart } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import toast, { Toaster } from 'react-hot-toast';
+import LazyLoad from 'react-lazy-load';
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import PlaceholderImage from "../../../assets/banners/banner.jpg";
+import 'react-lazy-load-image-component/src/effects/blur.css';
+import './ChefsCard.css'
 
 
 
@@ -22,8 +27,17 @@ const ChefsCard = ({ chef }) => {
             <Toaster />
             <Col>
                 <Card className='position-relative' style={{ height: '600px' }}>
-                    <Card.Img className='rounded' variant="top" src={chefs_info?.img} />
-                    
+                    {/* <LazyLoad height={282}>
+                        <Card.Img className='rounded' variant="top" src= />
+                    </LazyLoad> */}
+
+                    <LazyLoadImage src={chefs_info?.img} className='card-picture'
+                        width={402} height={300} PlaceholderSrc={PlaceholderImage}
+                        effect="blur"
+                        alt="Image Alt"
+                    />
+
+
 
                     <Card.Body>
                         <Card.Title>{chefs_info?.name}</Card.Title>
