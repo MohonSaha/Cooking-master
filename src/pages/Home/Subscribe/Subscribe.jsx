@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, Container, Form, InputGroup } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import './Subcribe.css'
 
 const Subscribe = () => {
     return (
