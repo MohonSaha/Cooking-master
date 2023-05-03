@@ -41,7 +41,13 @@ const Navbar = () => {
 
                         <span>
                             {
-                            user ? <span className='mb-0 me-3'>User </span> : ''
+                                user ? <span className='mb-0 me-3 '>
+                                    <Link className="profile-img">
+                                        <img style={{ width: '36px' }} className="rounded-circle" src={user?.photoURL} alt="" />
+                                    </Link>
+
+
+                                </span> : ''
                                 // <FaUserCircle className='mt-1' style={{ fontSize: '2rem', color: 'black' }}></FaUserCircle>
                             }
                         </span>

@@ -10,7 +10,7 @@
     font-weight: 700;
     font-size: 21px;
     margin: 15px;
-    color: #ec3e1f;
+    color: #7f1805;
   }
   
   .Navbar .nav-items > a {
@@ -31,6 +31,7 @@
     color: #ec3e1f;
     border-radius: 16px;
     transition-duration: 200ms;
+    /* color: #a1c8f9; */
   }
   
   .Navbar > .nav-items > a:hover::before {
@@ -39,6 +40,11 @@
   
   .Navbar > .nav-toggle {
     display: none;
+  }
+
+  .profile-img img:hover{
+    transform: scale(1.1);
+    transition-duration: 400ms;
   }
   
   @media (max-width: 700px) {
