@@ -18,13 +18,14 @@ const Home = () => {
 
             <Container className='mt-5'>
                 <Row>
-                    <Col lg={3}>
-                        <LeftNav></LeftNav>
+                    <Col lg={9}>
+
+                        <Chefs>{chefs}</Chefs>
                     </Col>
 
 
-                    <Col lg={9}>
-                        <Chefs>{chefs}</Chefs>
+                    <Col lg={3}>
+                        <LeftNav></LeftNav>
                     </Col>
                 </Row>
             </Container>

@@ -18,7 +18,7 @@ const ChefsCard = ({ chef }) => {
 
 
     return (
-        <div className='mt-5'>
+        <div className='mt-4'>
             <Toaster />
             <Col>
                 <Card className='position-relative' style={{ height: '600px' }}>

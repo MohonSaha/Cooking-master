@@ -10,7 +10,8 @@ const Chefs = ({children}) => {
 
 
     return (
-        <div>
+        <div className='mt-3'>
+            <h5 className=' w-50 '><span className='fw-2 fs-4'>Top reted chefs</span></h5>
             <Row xs={1} md={2} className="g-4">
                 {Array.from({ length: 1 }).map((_, idx) => (
 
