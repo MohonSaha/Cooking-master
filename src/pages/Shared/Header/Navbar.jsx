@@ -1,13 +1,30 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
-import { FaSearch } from 'react-icons/fa';
+import { FaSearch, FaUserCircle } from 'react-icons/fa';
 import Activelink from "../ActiveLink/Activelink";
-import { Container } from "react-bootstrap";
+import { Button, Container } from "react-bootstrap";
+import { AuthContext } from "../../../providers/AuthProviders";
 
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
+
+    const { user, logOut } = useContext(AuthContext);
+
+    const handdleLogOut = () => {
+        logOut()
+            .then()
+            .catch(error => console.log(error))
+    }
+
+    const handleLogout = () => {
+        handleLogout()
+        console.log('logged outttttttttttttttt');
+    }
+
+
+
     return (
         <Container>
 
@@ -20,7 +37,31 @@ const Navbar = () => {
                     <Activelink to="/blog">Blog</Activelink>
                     <span className="apply-btn nav-items">
                         <Link to=""><FaSearch /></Link>
-                        <Link to="/login"><button className="primary-btn">Log In</button></Link>
+
+
+                        <span>
+                            {
+                            user ? <span className='mb-0 me-3'>User </span> : ''
+                                // <FaUserCircle className='mt-1' style={{ fontSize: '2rem', color: 'black' }}></FaUserCircle>
+                            }
+                        </span>
+
+                        <span>
+                            {
+                                user ? <span onClick={handdleLogOut}><button className="primary-btn">Logout</button></span> :
+
+
+
+                                    <Link to="/login"><button className="primary-btn">Log In</button></Link>
+                            }
+                        </span>
+
+
+
+
+
+
+
                     </span>
                 </div>
                 <div

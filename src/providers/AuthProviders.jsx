@@ -49,12 +49,12 @@ const AuthProviders = ({ children }) => {
 
 
     const authInfo = {
-        // user,
-        // loading,
         createUser,
         signIn,
         signInWithGoogle,
-        logOut
+        logOut,
+        user,
+        loading
     }
 
 
