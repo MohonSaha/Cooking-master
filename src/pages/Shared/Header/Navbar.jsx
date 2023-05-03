@@ -24,7 +24,7 @@ const Navbar = () => {
         <Container>
 
             <div className="Navbar">
-                <span className="nav-logo fs-3 ms-0">Cooking Master</span>
+                <span className="nav-logo fs-3 ms-0 cooking-primary">Cooking Master</span>
                 <div className={`nav-items ${isOpen && "open"}`}>
                     <Activelink to="/">Home</Activelink>
                     <Activelink to="/cart">Contract</Activelink>

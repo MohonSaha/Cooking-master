@@ -26,25 +26,26 @@ const ChefsCard = ({ chef }) => {
         <div className='mt-4'>
             <Toaster />
             <Col>
-                <Card className='position-relative' style={{ height: '600px' }}>
-                    {/* <LazyLoad height={282}>
-                        <Card.Img className='rounded' variant="top" src= />
-                    </LazyLoad> */}
+                <Card className='position-relative card' style={{ height: '580px', width: '100%' }}>
 
-                    <LazyLoadImage src={chefs_info?.img} className='card-picture'
-                        width={402} height={300} PlaceholderSrc={PlaceholderImage}
-                        effect="blur"
-                        alt="Image Alt"
-                    />
+                        {/* <Card.Img className='rounded' variant="top" src={chefs_info?.img} /> */}
+
+
+                    <div className='card-picture'>
+                        <LazyLoadImage src={chefs_info?.img} 
+                            width={402} variant="top" height={250} PlaceholderSrc={PlaceholderImage}
+                            effect="blur"
+                            alt="Image Alt"
+                            className='img-fluid'
+                        />
+                    </div>
 
 
 
                     <Card.Body>
                         <Card.Title>{chefs_info?.name}</Card.Title>
                         <Card.Text>
-                            This is a longer card with supporting text below as a natural
-                            lead-in to additional content. This content is a little bit
-                            longer.
+                            {details.slice(0, 200)}<span>...</span>
                         </Card.Text>
                         <Card.Text className='d-flex align-items-center'>
                             <FaRegClock className='me-1 fs-5 fw-bold'></FaRegClock>

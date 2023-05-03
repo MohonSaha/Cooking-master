@@ -26,12 +26,12 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>,
-        loader: () => fetch('http://localhost:5000/chefs')
+        loader: () => fetch('https://cooking-master-server-ten.vercel.app/chefs')
       },
       {
         path: '/recipes/:id',
         element: <PrivateRoute><Recipes></Recipes></PrivateRoute>,
-        loader: ({params}) => fetch('http://localhost:5000/chefs')
+        loader: ({params}) => fetch('https://cooking-master-server-ten.vercel.app/chefs')
       },
       {
           path: '/login',
