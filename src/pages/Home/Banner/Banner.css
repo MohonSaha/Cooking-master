@@ -1,11 +1,17 @@
+.banner-container {
+    position: absolute;
+    top: 40%;
+    left: 45%;
+}
 
+/* position-absolute top-50 start-50 me-5 pe-5 */
 
 @media (max-width: 700px) {
-    .banner-container{
-        align-items: center;
+    .banner-container {
         top: 25%;
-        left: 10% !important;
-        width: 90% !important;
+        left: 5%;
+        width: 80% !important;
+        margin: 0px 10px;
     }
 
 }
