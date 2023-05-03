@@ -11,7 +11,7 @@ const Subscribe = () => {
 
                 <div className='mt-4'>
                     <input placeholder='Email Address' type="text" className='custom-input'/>
-                    <button className='cooking-secondary-btn ms-3'>Subscribe</button>
+                    <button className='cooking-secondary-btn ms-3 subscribe-btn'>Subscribe</button>
                 </div>
             </div>
         </Container>

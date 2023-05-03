@@ -1,5 +1,6 @@
 import React from 'react';
 import { Accordion } from 'react-bootstrap';
+import Adds from '../../../assets/banners/lifestyle-Poster.jpg'
 
 const LeftNav = () => {
     return (
@@ -80,6 +81,11 @@ const LeftNav = () => {
                     </Accordion.Body>
                 </Accordion.Item>
             </Accordion>
+
+
+            <div className='w-100 mt-4'>
+                <img className='rounded-2' style={{width:'100%'}} src={Adds} alt="" />
+            </div>
         </div>
         
         </>

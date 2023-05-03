@@ -1,0 +1,10 @@
+@media screen and (max-width:576px) {
+
+    .custom-input{
+    width: 50%;
+    }
+
+    .subscribe-btn{
+        width: 40%;
+    }
+}
