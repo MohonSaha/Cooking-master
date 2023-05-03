@@ -2,11 +2,13 @@ import React, { useState } from 'react';
 import { Button, Card, Col, Container } from 'react-bootstrap';
 import { FaHeart, FaRegThumbsUp } from 'react-icons/fa';
 import toast, { Toaster } from 'react-hot-toast';
+import { Rating } from '@smastrom/react-rating'
+import '@smastrom/react-rating/style.css'
 
 const SingleRecipes = ({ recipe }) => {
 
     // console.log(recipe);
-    const { recipe_name, img, cooking_method, ingredients } = recipe;
+    const { recipe_name, img, cooking_method, ingredients, rating } = recipe;
 
     const [like, setLike] = useState(true);
 
@@ -39,13 +41,11 @@ const SingleRecipes = ({ recipe }) => {
 
                     <Card.Footer className="text-muted">
                         <div className='d-flex align-items-center justify-content-between'>
-                            <div>
-                                <Card.Text className='d-flex align-items-center'>
-                                    <FaRegThumbsUp className='me-1 fs-5 fw-bold text-secondary'></FaRegThumbsUp>
-                                    <div className='d-flex align-items-center'>
-                                        {/* <span className='me-1 fw-bold'></span>  {likes} */}
-                                    </div>
-                                </Card.Text>
+
+
+                            <div className='flex-grow-1 d-flex align-items-center'>
+                                <Rating style={{ maxWidth: 100 }} value={rating} readOnly />
+                                <span className='ms-2 mb-0 mt-1'>{rating}</span>
                             </div>
 
                             <div className=''>
