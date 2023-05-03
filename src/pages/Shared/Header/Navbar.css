@@ -4,7 +4,7 @@
     justify-content: space-between;
     align-items: center;
     background: #ffffff00;
-    padding: 0px 120px;
+    /* padding: 0px 120px; */
     
     /* top: 0;
     right: 0;
@@ -34,17 +34,8 @@
   .Navbar > .nav-items > a:hover {
     opacity: 1;
     color: #ec3e1f;
-  }
-  
-  .Navbar > .nav-items > a::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -5px;
-    width: 0;
-    height: 3px;
-    background: linear-gradient(90deg, #c1331a 0%, #ec3e1f 100%);
-    transition: all 0.45s;
+    border-radius: 16px;
+    transition-duration: 200ms;
   }
   
   .Navbar > .nav-items > a:hover::before {

@@ -4,6 +4,7 @@ import { Link, useLoaderData, useParams } from 'react-router-dom';
 import LeftNav from '../Shared/LeftNav/LeftNav';
 import { FaArrowLeft, FaHamburger, FaRegClock, FaRegThumbsUp } from 'react-icons/fa';
 import SingleRecipes from '../SingleRecipes/SingleRecipes';
+import RightNav from '../Shared/RightNav/RightNav';
 
 const Recipes = () => {
 
@@ -83,7 +84,7 @@ const Recipes = () => {
 
 
                     <Col lg={3}>
-                        <LeftNav></LeftNav>
+                        <RightNav></RightNav>
                     </Col>
                 </Row>
             </Container>

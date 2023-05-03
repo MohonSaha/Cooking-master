@@ -7,6 +7,8 @@ import Register from "../pages/Login/Register/Register";
 import Home from "../pages/Home/Home/Home";
 import Main from "../pages/Main/Main";
 import Recipes from "../pages/Recipes/Recipes";
+import ErrorPage from "../pages/ErrorPage/ErrorPage";
+import Blog from "../pages/Blog/Blog";
 
 
 
@@ -16,6 +18,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: '/',
@@ -35,6 +38,10 @@ const router = createBrowserRouter([
           path: '/register',
           element: <Register></Register>
       },
+      {
+        path: '/blog',
+        element: <Blog></Blog>
+      }
 
     ]
   },
