@@ -69,7 +69,7 @@ const Login = () => {
 
     return (
         <div>
-            <Container className='mx-auto w-25 p-5 mt-5 rounded-1' style={{ backgroundColor: '#dbdbdb' }}>
+            <Container className='login-page rounded-1' style={{ backgroundColor: '#dbdbdb' }}>
                 <h3>Please Login</h3>
                 <Form onSubmit={handleLogin}>
                     <Form.Group className="mb-3" controlId="formBasicEmail">

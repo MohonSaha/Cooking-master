@@ -68,7 +68,7 @@ const Register = () => {
 
     return (
         <div>
-            <Container className='mx-auto w-25 px-5 py-3 my-5 rounded' style={{ backgroundColor: '#dbdbdb' }}>
+            <Container className='login-page rounded' style={{ backgroundColor: '#dbdbdb' }}>
                 <h3>Please Register</h3>
                 <Form onSubmit={handleRegister}>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
