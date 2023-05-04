@@ -30,11 +30,8 @@ const Navbar = () => {
                     <Activelink to="/cart">Contract</Activelink>
                     <Activelink to="/about">About Us</Activelink>
                     <Activelink to="/blog">Blog</Activelink>
-                    <span className="apply-btn nav-items">
-                        <Link to=""><FaSearch /></Link>
-
-
-                        <span>
+                        <Link className="profile-item" to=""><FaSearch /></Link>
+                        <span className="profile-item">
                             {
                                 user ? <span className='mb-0 me-3 '>
 
@@ -60,7 +57,7 @@ const Navbar = () => {
                             }
                         </span>
 
-                        <span>
+                        <span className="profile-item">
                             {
                                 user ? <span onClick={handdleLogOut}><button className="primary-btn">Logout</button></span> :
 
@@ -70,13 +67,6 @@ const Navbar = () => {
                             }
                         </span>
 
-
-
-
-
-
-
-                    </span>
                 </div>
                 <div
                     className={`nav-toggle ${isOpen && "open"}`}

@@ -10,7 +10,6 @@
     font-weight: 700;
     font-size: 21px;
     margin: 15px;
-    /* color: #7f1805; */
   }
   
   .Navbar .nav-items > a {
@@ -23,6 +22,13 @@
   }
 
   .apply-btn {
+    margin: 15px;
+    position: relative;
+    /* opacity: 0.9;
+    color: black; */
+  }
+
+  .apply-btn {
     margin-left: 230px;
   }
   
@@ -31,7 +37,6 @@
     color: #ec3e1f;
     border-radius: 16px;
     transition-duration: 200ms;
-    /* color: #a1c8f9; */
   }
   
   .Navbar > .nav-items > a:hover::before {
@@ -51,12 +56,22 @@
 
     
 
-    .apply-btn {
-      margin-left: 0px;
-      /* width: 200px; */
+ .profile-item{
+  margin-left: 8px;
+  margin-bottom: 20px;
+ }
+
+    .profile-btn{
+      display: block;
+      position: absolute;
+      top: 60px;
+      display: flex;
+      flex-direction: column;
+      /* right: 30%; */
+      margin-right: 30%;
     }
 
-    .Navbar .nav-items {
+    .nav-items {
       position: absolute;
       top: 60px;
       display: flex;
@@ -70,11 +85,11 @@
       z-index: 2;
     }
   
-    .Navbar > .nav-items > a::before {
+    .nav-items > a::before {
         background: transparent;
     }
   
-    .Navbar > .nav-items.open {
+     .nav-items.open {
         transform: translateX(0);
     }
   

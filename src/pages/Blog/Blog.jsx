@@ -3,6 +3,7 @@ import { Button, Container } from 'react-bootstrap';
 import { FaArrowDown } from 'react-icons/fa';
 const ref = React.createRef();
 import Pdf from "react-to-pdf";
+import toast, { Toaster } from 'react-hot-toast';
 
 const Blog = () => {
 
@@ -12,14 +13,19 @@ const Blog = () => {
         format: [12, 15]
     };
 
+    const toPdf = () =>{
+        toast.success('Added favourite');
+        console.log('downloaddddd');
+    }
 
     return (
         <Container className='my-5'>
+            <Toaster />
 
             <div className="App">
                 <Pdf targetRef={ref} options={options} filename="code-example.pdf">
                     {({ toPdf }) => <Button className='my-4 ms-2' size="sm" onClick={toPdf}>
-                        <span className='d-flex align-items-center'>Download Pdf
+                        <span onClick={handlePdf} className='d-flex align-items-center'>Download Pdf
                             <FaArrowDown className='ms-2'></FaArrowDown></span>
                     </Button>}
                 </Pdf>

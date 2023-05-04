@@ -13,9 +13,8 @@ const SingleRecipes = ({ recipe }) => {
     const [like, setLike] = useState(true);
 
     const handleLikeButton = () => {
-        toast.success('Successfully created!');
+        toast.success('Added favourite');
         setLike(false)
-        console.log('i am gere');
     }
 
     return (
