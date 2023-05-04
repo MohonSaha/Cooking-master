@@ -7,15 +7,15 @@ import { FaGithub, FaGoogle } from 'react-icons/fa';
 const Login = () => {
 
     const [error, setError] = useState('');
-    const {signIn, signInWithGoogle} = useContext(AuthContext);
-    
+    const { signIn, signInWithGoogle, signInWithGithub } = useContext(AuthContext);
+
     const navigate = useNavigate();
     const location = useLocation();
 
     const from = location.state?.from?.pathname || '/';
 
 
-    const handleLogin = event =>{
+    const handleLogin = event => {
         event.preventDefault();
         setError('');
         const form = event.target;
@@ -26,34 +26,45 @@ const Login = () => {
         //     setError("Email and password doesn't match")
         //     return;
         // }
-        
+
         signIn(email, password)
-        .then(result=>{
-            const loggedUser = result.user;
-            console.log(loggedUser);
-            form.reset()
-            navigate(from, {replace: true})
-        })
-        .catch(error => {
-            setError(error.message)
-        })
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser);
+                form.reset()
+                navigate(from, { replace: true })
+            })
+            .catch(error => {
+                setError(error.message)
+            })
     }
 
 
     // Handle Google signIn: 
-    const handleGoogleSignIn = () =>{
+    const handleGoogleSignIn = () => {
         setError('');
-        
+
         signInWithGoogle()
-        .then(result=>{
-            const loggedUser = result.user;
-            console.log(loggedUser);
-        })
-        .catch(error => {
-            setError(error.message)
-        })
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser);
+                navigate(from, { replace: true })
+            })
+            .catch(error => {
+                setError(error.message)
+            })
     }
-    
+
+    const handleGithubSignIn = () => {
+        setError('');
+        signInWithGithub()
+            .then(result => {
+                const loggedUser = result.user;
+                navigate(from, { replace: true })
+            })
+            .catch()
+    }
+
 
 
     return (
@@ -84,15 +95,15 @@ const Login = () => {
                         Don't Have an account? <Link className='text-decoration-none text-danger' to='/register'>Register</Link>
                     </Form.Text>
 
-                    <Button onClick={handleGoogleSignIn} className='mt-4 w-100' variant="outline-primary"><FaGoogle/> Login with Google</Button>
+                    <Button onClick={handleGoogleSignIn} className='mt-4 w-100' variant="outline-primary"><FaGoogle /> Login with Google</Button>
 
-                    <Button className='mt-2 w-100' variant="outline-secondary"><FaGithub/> Login with Github</Button>
+                    <Button onClick={handleGithubSignIn} className='mt-2 w-100' variant="outline-secondary"><FaGithub /> Login with Github</Button>
 
                     <Form.Text className="text-success">
 
                     </Form.Text>
 
-                    
+
                 </Form>
             </Container>
         </div>
