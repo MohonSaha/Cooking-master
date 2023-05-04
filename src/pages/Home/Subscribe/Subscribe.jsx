@@ -6,7 +6,7 @@ import './Subcribe.css'
 const Subscribe = () => {
     return (
         <Container>
-            <div className='rounded-3 text-center px-5 pt-5' style={{ backgroundColor: '#d63012', height: '300px', marginTop: '100px' }}>
+            <div className='subscribe-container rounded-3 text-center px-5 pt-5' style={{ backgroundColor: '#d63012', height: '300px', marginTop: '100px' }}>
                 <h2 className='text-white '>Be the first to know about the latest deals, receive new trending recipes & more!</h2>
 
 

@@ -19,8 +19,8 @@ const Profile = () => {
     }
 
     return (
-        <Container className='d-flex align-items-center justify-content-center my-5'>
-            <Card className='py-2 px-2 w-25'>
+        <Container className='d-flex align-items-center justify-content-center my-5 login-page h-100'>
+            <Card className='py-2 ps-2 pe-5'>
                 <Card.Img style={{width: '150px'}}  className='rounded-circle  ' variant="top" src={user?.photoURL ? user?.photoURL : profile} />
                 <Card.Body>
                     <Card.Title>{user?.displayName}</Card.Title>

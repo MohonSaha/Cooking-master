@@ -11,7 +11,7 @@ const Blog = () => {
     const options = {
         orientation: 'landscape',
         unit: 'in',
-        format: [12, 15]
+        format: [15, 15]
     };
 
 

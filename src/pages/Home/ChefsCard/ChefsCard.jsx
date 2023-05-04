@@ -40,7 +40,7 @@ const ChefsCard = ({ chef }) => {
                     <Card.Body>
                         <Card.Title className='mt-3'>{chefs_info?.name}</Card.Title>
                         <Card.Text>
-                            {details.slice(0, 200)}<span>...</span>
+                            {details.slice(0, 150)}<span>...</span>
                         </Card.Text>
                         <Card.Text className='d-flex align-items-center'>
                             <FaRegClock className='me-1 fs-5 fw-bold'></FaRegClock>
