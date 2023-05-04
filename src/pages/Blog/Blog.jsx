@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, Container } from 'react-bootstrap';
+import { FaArrowDown } from 'react-icons/fa';
 const ref = React.createRef();
 import Pdf from "react-to-pdf";
 
@@ -8,17 +9,19 @@ const Blog = () => {
     const options = {
         orientation: 'landscape',
         unit: 'in',
-        format: [12,15]
+        format: [12, 15]
     };
 
 
     return (
         <Container className='my-5'>
-            <Button className='my-4 ms-2 ' size="sm">Download Pdf</Button>
 
             <div className="App">
                 <Pdf targetRef={ref} options={options} filename="code-example.pdf">
-                    {({ toPdf }) => <Button onClick={toPdf}>Generate Pdf</Button>}
+                    {({ toPdf }) => <Button className='my-4 ms-2' size="sm" onClick={toPdf}>
+                        <span className='d-flex align-items-center'>Download Pdf
+                            <FaArrowDown className='ms-2'></FaArrowDown></span>
+                    </Button>}
                 </Pdf>
                 <div ref={ref}>
 

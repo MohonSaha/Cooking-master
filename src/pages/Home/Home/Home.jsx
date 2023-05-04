@@ -12,13 +12,12 @@ const Home = () => {
 
     const chefs = useLoaderData()
 
-    const navigation = useNavigation();
-    console.log(navigation.state);
+    
 
     return (
         <div>
             <Banner></Banner>
-            <div>{navigation.state === 'loading' && 'i am coming'}</div>
+            
 
             <Container className='mt-5'>
                 <Row>

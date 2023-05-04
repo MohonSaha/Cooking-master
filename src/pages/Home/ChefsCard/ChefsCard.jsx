@@ -25,17 +25,15 @@ const ChefsCard = ({ chef }) => {
         <div className='mt-4'>
             <Toaster />
             <Col>
-                <Card className='position-relative card' style={{ height: '580px', width: '100%' }}>
-
-                        <Card.Img className='rounded' variant="top" src={chefs_info?.img} />
+                <Card className='position-relative card overflow-hidden' style={{ height: '580px', width: '100%' }}>
 
 
-                        {/* <LazyLoadImage src={chefs_info?.img} 
+                        <LazyLoadImage src={chefs_info?.img} 
                             width={402} variant="top" height={250} PlaceholderSrc={PlaceholderImage}
                             effect="blur"
                             alt="Image Alt"
                             className='img-fluid'
-                        /> */}
+                        />
 
 
 

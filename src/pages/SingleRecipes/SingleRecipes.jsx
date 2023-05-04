@@ -34,7 +34,9 @@ const SingleRecipes = ({ recipe }) => {
                         </Card.Text>
                         <Card.Text>
                             <span className='fw-bold'>Ingredients: </span>
-                            {ingredients.map(ing => <li className='my-0 text-secondary'>{ing} </li>)}
+                            {ingredients.map(ing => <li 
+                            key={ing.index}
+                            className='my-0 text-secondary'>{ing} </li>)}
                         </Card.Text>
                     </Card.Body>
 
