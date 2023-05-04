@@ -48,7 +48,7 @@ const Navbar = () => {
                                         }
                                     >
                                         <Link to='/profile' className="profile-img">
-                                            <img style={{ width: '36px' }} className="rounded-circle" src={user?.photoURL} alt="" />
+                                            <img style={{ width: '36px', height: '40px' }} className="rounded-circle" src={user?.photoURL} alt="" />
                                         </Link>
                                     </OverlayTrigger>
 

@@ -2,14 +2,20 @@ import React, { useContext } from 'react';
 import { AuthContext } from '../../../providers/AuthProviders';
 import { Button, Card, Container } from 'react-bootstrap';
 import { FaQuestion, FaRegSun } from 'react-icons/fa';
+import { useNavigate } from 'react-router';
 
 const Profile = () => {
 
     const { user, logOut } = useContext(AuthContext);
+    const navigate = useNavigate()
 
-    logOut()
-        .then()
-        .catch(error => console.log(error))
+    const handdleLogOut = () => {
+        logOut()
+            .then(() =>{
+                navigate('/')
+            })
+            .catch(error => console.log(error))
+    }
 
     return (
         <Container className='d-flex align-items-center justify-content-center my-5'>
@@ -26,7 +32,7 @@ const Profile = () => {
 
                     <p className='mb-2'><FaQuestion style={{ width: '20px', height: '20px' }} className='bg-secondary rounded-circle'></FaQuestion> Help & Support</p>
 
-                    <Button className='mt-4' variant="dark w-100">Log Out</Button>
+                    <Button onClick={handdleLogOut} className='mt-4' variant="dark w-100">Log Out</Button>
                 </Card.Body>
             </Card>
         </Container>
