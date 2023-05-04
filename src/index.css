@@ -81,7 +81,11 @@ border: #ec3e1f;
   margin: 0px auto;
   width: 30% !important;
   padding: 3% 10%;
+}
 
+.carousel-caption{
+  z-index: 3;
+  position: absolute;
 }
 
 

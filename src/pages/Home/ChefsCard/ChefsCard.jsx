@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Card, Col } from 'react-bootstrap';
-import { FaArrowRight, FaHamburger, FaHeart, FaRegClock, FaRegHeart } from 'react-icons/fa';
+import { FaArrowRight, FaHamburger, FaHeart, FaRegClock, FaRegHeart, FaThumbsUp } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import toast, { Toaster } from 'react-hot-toast';
 import { LazyLoadImage } from "react-lazy-load-image-component";
@@ -13,7 +13,7 @@ import './ChefsCard.css'
 const ChefsCard = ({ chef }) => {
 
     const [like, setLike] = useState(true);
-    const { chefs_info, details, title, _id } = chef;
+    const { chefs_info, details, title, _id, likes } = chef;
 
     const handleLikeButton = () => {
         toast.success('Successfully created!');
@@ -25,7 +25,7 @@ const ChefsCard = ({ chef }) => {
         <div className='mt-4'>
             <Toaster />
             <Col>
-                <Card className='position-relative card overflow-hidden' style={{ height: '590px', width: '100%' }}>
+                <Card className='position-relative card overflow-hidden' style={{ height: '640px', width: '100%' }}>
 
 
                         <LazyLoadImage src={chefs_info?.img} 
@@ -45,14 +45,22 @@ const ChefsCard = ({ chef }) => {
                         <Card.Text className='d-flex align-items-center'>
                             <FaRegClock className='me-1 fs-5 fw-bold'></FaRegClock>
                             <div className='d-flex align-items-center'>
-                                <span className='me-1 fw-bold'>Experience:</span>  {chefs_info?.experience} Years
+                                <span className='me-1 fw-bold'>Experience:</span>  
+                                <span className='fs-5 fw-bold text-secondary'>{chefs_info?.experience} Years</span>
                             </div>
                         </Card.Text>
 
                         <Card.Text className='d-flex align-items-center'>
                             <FaHamburger className='me-1 fs-5 fw-bold'></FaHamburger>
                             <div className='d-flex align-items-center'>
-                                <span className='me-1 fw-bold'>Aailable Recipes:</span>  {chefs_info?.recipes}
+                                <span className='me-1 fw-bold'>Aailable Recipes:</span>  <span className='fs-5 fw-bold text-secondary'>{chefs_info?.recipes}</span>
+                            </div>
+                        </Card.Text>
+
+                        <Card.Text className='d-flex align-items-center'>
+                            <FaThumbsUp className='me-1 fs-5 fw-bold'></FaThumbsUp>
+                            <div className='d-flex align-items-center'>
+                                <span className='me-1 fw-bold'>Total Likes:</span>  <span className='fs-5 fw-bold text-secondary'>{likes}</span>
                             </div>
                         </Card.Text>
 
