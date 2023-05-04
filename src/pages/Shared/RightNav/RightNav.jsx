@@ -1,8 +1,6 @@
 import React from 'react';
 import { Button, Container, ListGroup } from 'react-bootstrap';
 import { FaGoogle, FaGithub, FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaDiscord } from 'react-icons/fa';
-import Subscribe from '../../Home/Subscribe/Subscribe';
-// import bg from '../../../assets/bg1.png';
 
 const RightNav = () => {
     return (

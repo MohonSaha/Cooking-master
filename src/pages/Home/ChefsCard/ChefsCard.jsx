@@ -45,7 +45,7 @@ const ChefsCard = ({ chef }) => {
                         <Card.Text className='d-flex align-items-center'>
                             <FaRegClock className='me-1 fs-5 fw-bold'></FaRegClock>
                             <div className='d-flex align-items-center'>
-                                <span className='me-1 fw-bold'>Experience:</span>  {chefs_info?.experience} Years+
+                                <span className='me-1 fw-bold'>Experience:</span>  {chefs_info?.experience} Years
                             </div>
                         </Card.Text>
 
