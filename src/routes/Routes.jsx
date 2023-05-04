@@ -10,7 +10,6 @@ import Recipes from "../pages/Recipes/Recipes";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import Blog from "../pages/Blog/Blog";
 import PrivateRoute from "./PrivateRoute";
-import { Profiler } from "react";
 import Profile from "../pages/Login/Profile/Profile";
 
 

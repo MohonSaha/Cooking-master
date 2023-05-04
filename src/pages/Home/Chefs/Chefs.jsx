@@ -1,9 +1,6 @@
 import React from 'react';
 import { Card, Col, Row } from 'react-bootstrap';
-import { FaEye, FaHeart } from 'react-icons/fa';
-import { useLoaderData } from 'react-router-dom';
 import ChefsCard from '../ChefsCard/ChefsCard';
-import LazyLoad from 'react-lazy-load';
 
 const Chefs = ({ children }) => {
 
@@ -28,6 +25,10 @@ const Chefs = ({ children }) => {
 
                     ))}
                 </Row>
+
+                {/* <div className='card-container'>
+
+                </div> */}
 
 
 
