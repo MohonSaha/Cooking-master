@@ -1,27 +1,37 @@
 import React, { useEffect, useState } from 'react';
-import { Card, Col, Row } from 'react-bootstrap';
+import { Card, Col, Row, Spinner } from 'react-bootstrap';
 import ChefsCard from '../ChefsCard/ChefsCard';
 import { useNavigation } from 'react-router';
+import Loading from '../../Shared/Spinner/Loading';
+// import Spinner from '../../Shared/Spinner/Loading';
 
-const Chefs = ({ children }) => {
+const Chefs = () => {
 
-    const chefs = children;
+    // const chefs = children;
     // const navigation = useNavigation();
     // console.log(navigation.state);
     // const []
     
-    // const [loading, setLoading] = useState(true);
-    // const [chefs, setChefs] = useState([]);
-    // useEffect(()=>{
-    //     fetch('https://cooking-master-server-ten.vercel.app/chefs')
-    //     .then(res=> res.json())
-    //     .then
-    // } ,[])
+    const [loading, setLoading] = useState(false);
+    const [chefs, setChefs] = useState([]);
+    useEffect(()=>{
+        setLoading(true)
+        fetch('https://cooking-master-server-ten.vercel.app/chefs')
+        .then(res=> res.json())
+        .then(data => {
+            setChefs(data)
+            setLoading(false)
+        })
+        .catch(error => console.log(error))
+        
+    } ,[])
 
+    if(loading){
+        return <Loading></Loading>
+    }
 
     return (
         <div className='mt-3'>
-            {/* <div>{navigation.state === 'loading' && 'i am coming'}</div> */}
 
             <h5 className=' w-50 '><span className='fw-2 fs-4'>Top reted chefs</span></h5>
             
@@ -32,7 +42,7 @@ const Chefs = ({ children }) => {
                             {
                                 
 
-                                chefs.map(chef => <ChefsCard
+                               !loading && chefs.map(chef => <ChefsCard
                                     key={chef._id}
                                     chef={chef}
                                 ></ChefsCard>)
@@ -41,10 +51,6 @@ const Chefs = ({ children }) => {
 
                     ))}
                 </Row>
-
-                {/* <div className='card-container'>
-
-                </div> */}
 
 
 
