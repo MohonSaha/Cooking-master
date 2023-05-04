@@ -7,7 +7,7 @@ import { Carousel, Container } from 'react-bootstrap';
 const CarouselItam = () => {
     return (
         <Container className='my-5'>
-            <h2 className='mb-4'>Top of the Year: <span className='cooking-primary'>2023</span></h2>
+            <h2 className='mb-4'>Top of the year: <span className='cooking-primary'>2023</span></h2>
             <Carousel>
                 <Carousel.Item>
                     <img
@@ -18,7 +18,7 @@ const CarouselItam = () => {
 
                     />
                     <Carousel.Caption>
-                        <h3>First slide label</h3>
+                        <h3 className='text-light'>First slide label</h3>
                         <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
                     </Carousel.Caption>
                 </Carousel.Item>

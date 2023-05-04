@@ -18,11 +18,6 @@ const Footer = () => {
                         <Link className='text-decoration-none text-dark'>Professionals</Link>
                         <Link className='text-decoration-none text-dark'>Stores</Link>
                     </div>
-                    <div className='d-flex flex-column'>
-                        <Link className='text-decoration-none text-dark'>Contact Form</Link>
-                        <Link className='text-decoration-none text-dark'>Work With Us</Link>
-                        <Link className='text-decoration-none text-dark'>Visit Us</Link>
-                    </div>
 
                     <div className='d-flex flex-column'>
                         <Link className='text-decoration-none text-dark'><FaFacebook /> Facebook</Link>

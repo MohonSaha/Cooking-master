@@ -23,7 +23,7 @@ const SingleRecipes = ({ recipe }) => {
 
 
             <Col>
-                <Card style={{ height: '650px' }}>
+                <Card style={{ height: '650px', marginTop: '30px'}}>
                     <Card.Img variant="top" src={img} />
                     <Card.Body>
                         <Card.Title className=' cooking-primary'>{recipe_name}</Card.Title>

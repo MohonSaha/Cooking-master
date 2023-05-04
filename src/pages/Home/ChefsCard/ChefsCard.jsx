@@ -25,7 +25,7 @@ const ChefsCard = ({ chef }) => {
         <div className='mt-4'>
             <Toaster />
             <Col>
-                <Card className='position-relative card overflow-hidden' style={{ height: '580px', width: '100%' }}>
+                <Card className='position-relative card overflow-hidden' style={{ height: '590px', width: '100%' }}>
 
 
                         <LazyLoadImage src={chefs_info?.img} 
@@ -38,7 +38,7 @@ const ChefsCard = ({ chef }) => {
 
 
                     <Card.Body>
-                        <Card.Title>{chefs_info?.name}</Card.Title>
+                        <Card.Title className='mt-3'>{chefs_info?.name}</Card.Title>
                         <Card.Text>
                             {details.slice(0, 200)}<span>...</span>
                         </Card.Text>

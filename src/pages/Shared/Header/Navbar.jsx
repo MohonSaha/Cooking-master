@@ -27,7 +27,6 @@ const Navbar = () => {
                 <span className="nav-logo fs-3 ms-0 cooking-primary">Cooking Master</span>
                 <div className={`nav-items ${isOpen && "open"}`}>
                     <Activelink to="/">Home</Activelink>
-                    <Activelink to="/cart">Contract</Activelink>
                     <Activelink to="/about">About Us</Activelink>
                     <Activelink to="/blog">Blog</Activelink>
                         <Link className="profile-item" to=""><FaSearch /></Link>
