@@ -6,7 +6,7 @@ import './Banner.css'
 const Banner = () => {
     return (
         <Container className='mt-5'>
-            <Image className='rounded-3 position-relative' style={{height:'400px', width: '100%'}} src={banner}/>
+            <Image className='rounded-3 carousel-inner' style={{height:'500px', width: '100%'}} src={banner}/>
 
             <div style={{width: '600px', bottom: '280px'}} className=' banner-container'>
                 <h2 className='text-light fs-1'>Lorem ipsum dolor sit amet consectetur adipisicing.</h2>

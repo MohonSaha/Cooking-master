@@ -27,17 +27,15 @@ const ChefsCard = ({ chef }) => {
             <Col>
                 <Card className='position-relative card' style={{ height: '580px', width: '100%' }}>
 
-                        {/* <Card.Img className='rounded' variant="top" src={chefs_info?.img} /> */}
+                        <Card.Img className='rounded' variant="top" src={chefs_info?.img} />
 
 
-                    <div className='card-picture'>
-                        <LazyLoadImage src={chefs_info?.img} 
+                        {/* <LazyLoadImage src={chefs_info?.img} 
                             width={402} variant="top" height={250} PlaceholderSrc={PlaceholderImage}
                             effect="blur"
                             alt="Image Alt"
                             className='img-fluid'
-                        />
-                    </div>
+                        /> */}
 
 
 
