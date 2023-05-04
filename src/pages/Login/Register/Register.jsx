@@ -2,11 +2,14 @@ import React, { useContext, useState } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProviders';
+import { updateProfile } from '@firebase/auth';
 
 const Register = () => {
 
     const [error, setError] = useState('');
-    const { createUser, logOut } = useContext(AuthContext);
+    const { createUser, logOut, user } = useContext(AuthContext);
+    // const {viewName, setViewName} = useState(null);
+    // const {viewPhoto, setViewPhoto} = useState(null);
     const navigate = useNavigate();
 
 
@@ -39,6 +42,7 @@ const Register = () => {
             .then(result => {
                 const createdUser = result.user;
                 console.log(createdUser);
+                updateUserData(result.user, name, photo)
                 form.reset();
                 logOut()
                     .then()
@@ -49,6 +53,16 @@ const Register = () => {
             .catch(error => {
                 console.log(error);
             })
+
+
+            const updateUserData = (user, name, photo) =>{
+                updateProfile(user, {
+                    displayName: name,
+                    photoURL: photo,
+                })
+                .then()
+                .catch(error => console.log(error))
+            }
     }
 
 
