@@ -5,6 +5,7 @@ import { FaSearch, FaUserCircle } from 'react-icons/fa';
 import Activelink from "../ActiveLink/Activelink";
 import { Button, Container, OverlayTrigger, Tooltip } from "react-bootstrap";
 import { AuthContext } from "../../../providers/AuthProviders";
+import profile from '../../../assets/logos/user.png'
 
 
 const Navbar = () => {
@@ -44,7 +45,7 @@ const Navbar = () => {
                                         }
                                     >
                                         <Link to='/profile' className="profile-img">
-                                            <img style={{ width: '38px', height: '38px' }} className="rounded-circle" src={user?.photoURL} alt="" />
+                                            <img style={{ width: '38px', height: '38px' }} className="rounded-circle" src={user?.photoURL ? user?.photoURL : profile} alt="" />
                                         </Link>
                                     </OverlayTrigger>
 

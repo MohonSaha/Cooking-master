@@ -3,6 +3,7 @@ import { AuthContext } from '../../../providers/AuthProviders';
 import { Button, Card, Container } from 'react-bootstrap';
 import { FaQuestion, FaRegSun } from 'react-icons/fa';
 import { useNavigate } from 'react-router';
+import profile from '../../../assets/logos/user.png'
 
 const Profile = () => {
 
@@ -19,8 +20,8 @@ const Profile = () => {
 
     return (
         <Container className='d-flex align-items-center justify-content-center my-5'>
-            <Card className='py-3 px-2'>
-                <Card.Img className='rounded-circle w-50' variant="top" src={user?.photoURL} />
+            <Card className='py-2 px-2 w-25'>
+                <Card.Img style={{width: '150px'}}  className='rounded-circle  ' variant="top" src={user?.photoURL ? user?.photoURL : profile} />
                 <Card.Body>
                     <Card.Title>{user?.displayName}</Card.Title>
                     <Card.Text>
