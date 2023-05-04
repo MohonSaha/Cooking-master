@@ -3,7 +3,6 @@ import { Card, Col } from 'react-bootstrap';
 import { FaArrowRight, FaHamburger, FaHeart, FaRegClock, FaRegHeart } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import toast, { Toaster } from 'react-hot-toast';
-import LazyLoad from 'react-lazy-load';
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import PlaceholderImage from "../../../assets/banners/banner.jpg";
 import 'react-lazy-load-image-component/src/effects/blur.css';

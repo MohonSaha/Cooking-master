@@ -1,48 +1,54 @@
 import React, { useContext, useState } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProviders';
 
 const Register = () => {
 
     const [error, setError] = useState('');
-    const { createUser } = useContext(AuthContext);
+    const { createUser, logOut } = useContext(AuthContext);
+    const navigate = useNavigate();
 
 
-    const handleRegister = (event) =>{
+    const handleRegister = (event) => {
         event.preventDefault();
         setError('')
         const form = event.target;
         const name = form.name.value;
-        const email = form.email.value;       
+        const email = form.email.value;
         const photo = form.photo.value;
         const password = form.password.value;
         console.log(name, email, password, photo);
 
-         // PassWord validation System 
-         if(!email){
+        // PassWord validation System 
+        if (!email) {
             setError('Please add your email adress')
             return;
         }
-        else if(!password){
+        else if (!password) {
             setError('Please add your password');
             return;
         }
-        else if(password.length <6){
+        else if (password.length < 6) {
             setError("Please add at least 6 charecters");
             return;
         }
 
 
         createUser(email, password)
-        .then(result =>{
-            const createdUser = result.user;
-            console.log(createdUser);
-            form.reset();
-        })
-        .catch(error =>{
-            console.log(error);
-        })
+            .then(result => {
+                const createdUser = result.user;
+                console.log(createdUser);
+                form.reset();
+                logOut()
+                    .then()
+                    .catch(error => console.log(error))
+                navigate('/login')
+
+            })
+            .catch(error => {
+                console.log(error);
+            })
     }
 
 
@@ -68,7 +74,7 @@ const Register = () => {
 
                     <Form.Group className="mb-3" controlId="formBasicPassword">
                         <Form.Label>Password</Form.Label>
-                        <Form.Control type="password" name='password'  placeholder="Password" />
+                        <Form.Control type="password" name='password' placeholder="Password" />
                     </Form.Group>
 
                     <Form.Text className="text-danger mt-0 mb-3 fs-6">
@@ -87,7 +93,7 @@ const Register = () => {
 
                     </Form.Text>
 
-                    
+
                 </Form>
             </Container>
         </div>
