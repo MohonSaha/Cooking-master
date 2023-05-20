@@ -43,7 +43,7 @@ const Register = () => {
                 const createdUser = result.user;
                 console.log(createdUser);
                 updateUserData(result.user, name, photo)
-                form.reset();
+                // form.reset();
                 logOut()
                     .then()
                     .catch(error => console.log(error))
