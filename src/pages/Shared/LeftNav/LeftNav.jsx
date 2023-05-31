@@ -9,7 +9,7 @@ const LeftNav = () => {
             <h3 className='m-3'>Frequently asked <span className='cooking-primary'>questions</span></h3>
             <Accordion defaultActiveKey="0">
                 <Accordion.Item eventKey="0">
-                    <Accordion.Header>How can we print a recipe from a food recipe website?</Accordion.Header>
+                    <Accordion.Header>1. How can we print a recipe from a food recipe website?</Accordion.Header>
                     <Accordion.Body>Look for a "Print" button on the recipe page. This will often bring up a printer-friendly version of the recipe that you can print out and keep in your kitchen.
                     </Accordion.Body>
                 </Accordion.Item>
