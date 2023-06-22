@@ -1,5 +1,5 @@
 
-## Project Name : [__Apply Mate__](https://apply-mate.netlify.app/)
+## Project Name : [__Cooking Master__](https://cooking-master-3e6ff.web.app/)
 
 ### Best Features: 
 
@@ -13,7 +13,7 @@
 - Email authentication
 - Google and Github authentication 
 
-<span>Live Site: </span> [Click Me](https://apply-mate.netlify.app/)
+<span>Live Site: </span> [Click Me](https://cooking-master-3e6ff.web.app/)
 
 
 
